@@ -1,6 +1,6 @@
 #id, elif, else
 
-idade = 19
+idade = int(input("Quantos anos você tem? "))
 
 
 if idade >= 18:
