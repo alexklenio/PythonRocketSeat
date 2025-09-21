@@ -28,3 +28,18 @@ print()
 print("\nFor utilizando dicionário - items(chave, valor):")
 for chave, valor in pessoa.items():
     print(f"{chave}: {valor}")
+print()
+print()
+
+
+print("\nFor utilizando a função range()")
+for numero in range(0,5):
+    print("Numero:", numero)
+print()
+print()
+
+print("\nFor utilizando a função range() com len()")
+lista = [1, 2, 3, 4, 5]
+for indice in range(0, len(lista)):
+    print("Indice: ", indice, end='   ')
+    print("Elemento: ", lista[indice])
