@@ -43,3 +43,12 @@ lista = [1, 2, 3, 4, 5]
 for indice in range(0, len(lista)):
     print("Indice: ", indice, end='   ')
     print("Elemento: ", lista[indice])
+print()
+print()
+
+lista_enum = ["a", "b", "c"]
+for indice, valor in enumerate(lista_enum):
+    print(f"{indice} : {valor}")
+    
+
+    
