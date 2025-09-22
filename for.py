@@ -1,4 +1,4 @@
-#for utilizando lista
+# for utilizando lista
 
 lista = [1, 2, 3, 4, 5]
 print("for utilizando lista:")
@@ -9,19 +9,19 @@ print()
 tupla = (1, 2, 3, 4, 5, 6)
 print("\nfor utilizando tupla:")
 for elemento in tupla:
-    print(elemento, end=' ')
+    print(elemento, end=" ")
 print()
- 
-pessoa = {"nome": "joão", "idade":30, "Cidade": "Sâo Paulo"}
+
+pessoa = {"nome": "joão", "idade": 30, "Cidade": "Sâo Paulo"}
 
 print("\nFor utilizando dicionário - chaves:")
 for chave in pessoa.keys():
-    print(chave, end=' ')
+    print(chave, end=" ")
 print()
 
 print("\nFor utilizando dicionário - valores:")
 for valores in pessoa.values():
-    print(valores, end=' ')
+    print(valores, end=" ")
 print()
 print()
 
@@ -33,7 +33,7 @@ print()
 
 
 print("\nFor utilizando a função range()")
-for numero in range(0,5):
+for numero in range(0, 5):
     print("Numero:", numero)
 print()
 print()
@@ -41,7 +41,7 @@ print()
 print("\nFor utilizando a função range() com len()")
 lista = [1, 2, 3, 4, 5]
 for indice in range(0, len(lista)):
-    print("Indice: ", indice, end='   ')
+    print("Indice: ", indice, end="   ")
     print("Elemento: ", lista[indice])
 print()
 print()
@@ -49,6 +49,4 @@ print()
 lista_enum = ["a", "b", "c"]
 for indice, valor in enumerate(lista_enum):
     print(f"{indice} : {valor}")
-    
 
-    
