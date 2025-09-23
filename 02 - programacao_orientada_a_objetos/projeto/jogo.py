@@ -2,6 +2,8 @@
 #Heroi: Controlado pelo usuário
 #Inimigo: Adversário do usuário
 
+import random
+
 class Personagem:
     def __init__(self, nome, vida, nivel):
         self.__nome = nome
@@ -26,7 +28,7 @@ class Personagem:
             self.__vida = 0
 
     def atacar(self, alvo):
-        dano = self.__nivel * 2
+        dano = random.randint(self.get_nivel() * 2, self.get_nivel() * 4)
         alvo.receber_ataque(dano)
         print(f"{self.get_nome()} atacou {alvo.get_nome()} e causou {dano} de dano")
     
@@ -42,6 +44,11 @@ class Heroi(Personagem):
     
     def exibir_detalhes(self):
         return f"{super().exibir_detalhes()}\nHabilidade: {self.get_habilidade()}"
+    
+    def ataque_especial(self, alvo):
+        dano = random.randint(self.get_nivel() * 3, self.get_nivel() * 7)
+        alvo.receber_ataque(dano)
+        print(f"{self.get_nome()} usou a habilidade especial {self.get_habilidade()} em {alvo.get_nome()} e causou {dano} de dano!")
     
 
 
@@ -62,7 +69,7 @@ class Jogo:
     """Classe orquestradora do jogo"""
     def __init__(self):
         self.heroi = Heroi(nome = "Goku", vida = 100, nivel = 5, habilidade = "Kamehamehaaaa")
-        self.inimigo = Inimigo(nome = "Pilaf", vida = 50, nivel = 3, tipo = "Voador")
+        self.inimigo = Inimigo(nome = "Pilaf", vida = 80, nivel = 5, tipo = "Voador")
 
 
     def iniciar_batalha(self):
@@ -80,8 +87,14 @@ class Jogo:
 
             if escolha == "1":
                 self.heroi.atacar(self.inimigo)
+            elif escolha =="2":
+                self.heroi.ataque_especial(self.inimigo)
             else:
                 print("Escolha inválida. Escolha novamente")
+
+            if self.inimigo.get_vida() > 0:
+                #inimigo ataca heroi
+                self.inimigo.atacar(self.heroi)
 
         if self.heroi.get_vida() > 0:
             print("\nParabéns,você venceu a batalha!")
